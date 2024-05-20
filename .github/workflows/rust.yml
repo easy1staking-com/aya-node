@@ -34,3 +34,9 @@ jobs:
           components: rust-src
       - name: Build
         run: cargo build --release
+      - uses: actions/upload-artifact@v4
+        with:
+          path: |
+            wm-devnet-chainspec.json
+            utils/session_key_tools/split_session_key.sh
+            target/release/aya-node
